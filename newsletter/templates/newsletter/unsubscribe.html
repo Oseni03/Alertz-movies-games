@@ -1,0 +1,9 @@
+{% extends "newsletter/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="success-message">
+  <h2>You have successfully unsubscribed from our newsletter.</h2>
+  <p>We're sorry to see you go. If you have any feedback or need assistance with your account, please <a href="{% url "blog:contact" %}">contact us</a>.</p>
+</div>
+{% endblock %}

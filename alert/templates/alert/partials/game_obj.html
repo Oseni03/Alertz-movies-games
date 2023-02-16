@@ -1,0 +1,36 @@
+{% load static %}
+
+<div class="d-flex">
+    <img
+        class="me-3"
+        src="{{ game.image }}"
+        alt="{{ game.title }}"
+        height="200px;"
+        width="200px;"
+    />
+    <div class="">
+        <h4>{{ game.title }}</h4>
+        <p>Genre: {{ game.genres_list }}</p>
+        <p>Platforms: {{ game.platform_list }}</p>
+        <p><span class="fw-bold">Date:</span> {{ game.date.date }}</p>
+        
+        {% if released is not True or search is True %}
+        {% if user.is_authenticated %}
+            {% if game in user.games.all %}
+            <a class="btn btn-lg btn-outline-primary" href="{% url 'alert:add-game' game.id %}">
+                Unset Alert <span class="px-2"><i class="bi bi-check-circle-fill"></i></span>
+            </a>
+            {% else %}
+            <a class="btn btn-lg btn-outline-primary" href="{% url 'alert:add-game' game.id %}">
+                Set Alert <span><i class="bi bi-check-circle"></i></span>
+            </a>
+            {% endif %}
+        {% else %}
+        <button class="btn btn-lg btn-outline-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+            Set Alert <span><i class="bi bi-check-circle"></i></span>
+        </button>
+        {% endif %}
+        {% endif %}
+    </div>
+    
+</div>

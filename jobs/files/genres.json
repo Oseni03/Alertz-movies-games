@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Action",
+        "slug": "action"
+    },
+    {
+        "name": "Adventure",
+        "slug": "adventure"
+    },
+    {
+        "name": "Battle",
+        "slug": "battle"
+    },
+    {
+        "name": "Board",
+        "slug": "board"
+    },
+    {
+        "name": "Card",
+        "slug": "card"
+    },
+    {
+        "name": "Casino",
+        "slug": "casino"
+    },
+    {
+        "name": "Compilation",
+        "slug": "compilation"
+    },
+    {
+        "name": "Educational",
+        "slug": "educational"
+    },
+    {
+        "name": "Fighting",
+        "slug": "fighting"
+    },
+    {
+        "name": "Flight",
+        "slug": "flight"
+    },
+    {
+        "name": "Hunting",
+        "slug": "hunting"
+    },
+    {
+        "name": "Music",
+        "slug": "music"
+    },
+    {
+        "name": "Other",
+        "slug": "other"
+    },
+    {
+        "name": "Pinball",
+        "slug": "pinball"
+    },
+    {
+        "name": "Platformer",
+        "slug": "platformer"
+    },
+    {
+        "name": "Party",
+        "slug": "party"
+    },
+    {
+        "name": "Productivity",
+        "slug": "productivity"
+    },
+    {
+        "name": "Puzzle",
+        "slug": "puzzle"
+    },
+    {
+        "name": "RPG",
+        "slug": "rpg"
+    },
+    {
+        "name": "Racing",
+        "slug": "racing"
+    },
+    {
+        "name": "Shooter",
+        "slug": "shooter"
+    },
+    {
+        "name": "Simulation",
+        "slug": "simulation"
+    },
+    {
+        "name": "Sports",
+        "slug": "sports"
+    },
+    {
+        "name": "Strategy",
+        "slug": "strategy"
+    },
+    {
+        "name": "Trivia",
+        "slug": "trivia"
+    },
+    {
+        "name": "Virtual Pet",
+        "slug": "virtual-pet"
+    },
+    {
+        "name": "Wrestling",
+        "slug": "wrestling"
+    }
+]

@@ -1,0 +1,97 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block content %}
+<div class="container">
+    <div class="mt-5">
+        <h1 class="h2">Your Account</h1>
+        <div class="d-flex justify-content-between">
+            <div>Manage your <b>alerts</b> and personal details</div>
+        </div>
+        <hr />
+    </div>
+    
+    <div class="mt-5">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-movies-tab" data-bs-toggle="tab" data-bs-target="#nav-movies" type="button" role="tab" aria-controls="nav-movies" aria-selected="true">Movies</button>
+            
+            <button class="nav-link" id="nav-games-tab" data-bs-toggle="tab" data-bs-target="#nav-games" type="button" role="tab" aria-controls="nav-games" aria-selected="false">Games</button>
+          </div>
+        </nav>
+    </div>
+    
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active p-3" id="nav-movies" role="tabpanel" aria-labelledby="nav-movies-tab">
+          {% if movies %}
+            {% for movie in movies %}
+            <div class="row mt-5">
+              <div class="col-3">
+                <img
+                  class="media-object"
+                  src="{{ movie.image }}"
+                  alt="{{ movie.title }}"
+                  height="200px;"
+                  width="200px;"
+                />
+              </div>
+              <div class="col-9 ps-5">
+                <h4>{{ movie.title }}</h4>
+                <p>Type: {{ movie.type.title }}</p>
+                <p>Genre: {{ movie.get_genres }}</p>
+                <p>With: {{ movie.casts }}</p>
+                <p>Region: {{ movie.region.country }}</p>
+                <p><span class="fw-bold">Date:</span> {{ movie.date.date }}</p>
+                <a
+                  class="btn btn-lg btn-outline-primary"
+                  href="{% url 'alert:add-movie' movie.id %}"
+                >
+                  Unset Alert <span><i class="bi bi-check-circle-fill"></i></span>
+                </a>
+              </div>
+            </div>
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+            {% endfor %}
+          {% else %}
+            <p class="text-center m-5">NO MOVIE ALERT</p>
+          {% endif %}    </div>
+    
+        <div class="tab-pane fade " id="nav-games" role="tabpanel" aria-labelledby="nav-games-tab">
+          {% if games %}
+            {% for game in games %}
+            <div class="row mt-5">
+              <div class="col-3">
+                <img
+                  class="media-object"
+                  src="{{ games.image }}"
+                  alt="{{ games.title }}"
+                  height="200px;"
+                  width="200px;"
+                />
+              </div>
+              <div class="col-9 ps-5">
+                <h4>{{ game.title }}</h4>
+                <p><span class="fw-bold">Genre:</span> {{ game.get_genres }}</p>
+                <p><span class="fw-bold">Platforms:</span> {{ game.get_platforms }}</p>
+                <p><span class="fw-bold">Date:</span> {{ game.date.date }}</p>
+                <a
+                  class="btn btn-lg btn-outline-primary"
+                  href="{% url 'alert:add-game' game.id %}"
+                >
+                  Unset Alert <span><i class="bi bi-check-circle-fill"></i></span>
+                </a>
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+            <p class="text-center m-5">NO GAME ALERT</p>
+          {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

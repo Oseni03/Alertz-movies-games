@@ -1,0 +1,114 @@
+[
+    {
+        "name": "PS5",
+        "value": "ps5"
+    },
+    {
+        "name": "Xbox Series X|S",
+        "value": "xbox-4"
+    },
+    {
+        "name": "PS4",
+        "value": "ps4"
+    },
+    {
+        "name": "Xbox One",
+        "value": "xbox-one"
+    },
+    {
+        "name": "Switch",
+        "value": "nintendo-switch"
+    },
+    {
+        "name": "PC",
+        "value": "pc"
+    },
+    {
+        "name": "PS3",
+        "value": "ps3"
+    },
+    {
+        "name": "Xbox 360",
+        "value": "xbox-360"
+    },
+    {
+        "name": "Wii U",
+        "value": "wii-u"
+    },
+    {
+        "name": "Wii",
+        "value": "wii"
+    },
+    {
+        "name": "3DS",
+        "value": "3ds"
+    },
+    {
+        "name": "New 3DS",
+        "value": "new-nintendo-3ds"
+    },
+    {
+        "name": "DS",
+        "value": "nds"
+    },
+    {
+        "name": "Vita",
+        "value": "vita"
+    },
+    {
+        "name": "PSP",
+        "value": "psp"
+    },
+    {
+        "name": "iPhone",
+        "value": "iphone"
+    },
+    {
+        "name": "iPad",
+        "value": "ipad"
+    },
+    {
+        "name": "Android",
+        "value": "android"
+    },
+    {
+        "name": "Xbox",
+        "value": "xbox"
+    },
+    {
+        "name": "Game Boy",
+        "value": "gb"
+    },
+    {
+        "name": "Game Boy Advance",
+        "value": "gba"
+    },
+    {
+        "name": "Nintendo 64",
+        "value": "n64"
+    },
+    {
+        "name": "Mac",
+        "value": "mac"
+    },
+    {
+        "name": "GameCube",
+        "value": "gcn"
+    },
+    {
+        "name": "Dreamcast",
+        "value": "dc"
+    },
+    {
+        "name": "PlayStation",
+        "value": "ps"
+    },
+    {
+        "name": "PlayStation 2",
+        "value": "ps2"
+    },
+    {
+        "name": "N-Gage",
+        "value": "nng"
+    }
+]

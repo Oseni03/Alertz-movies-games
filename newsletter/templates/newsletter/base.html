@@ -1,0 +1,9 @@
+{% load static %} 
+{% load django_htmx %}
+
+{% include "partials/messages.html" %}
+<div class="container my-5">
+    <div class="text-center border border-pill p-3">
+        {% block content %}{% endblock %}
+    </div>
+</div>

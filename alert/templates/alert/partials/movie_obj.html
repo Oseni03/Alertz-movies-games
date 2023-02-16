@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="d-flex">
+    <img
+        class="me-3"
+        src="{{ movie.image }}"
+        alt="{{ movie.title }}"
+        height="200px;"
+        width="200px;"
+    />
+    <div class="">
+        <h4>{{ movie.title }}</h4>
+        <p>Type: {{ movie.type.title }}</p>
+        <p>Genre: {{ movie.genres_list }}</p>
+        <p>With: {{ movie.casts }}</p>
+        <p>Region: {{ movie.region.country }}</p>
+        <p><span class="fw-bold">Date:</span> {{ movie.date.date }}</p>
+        
+        {% if released is not True or search is True %}
+        {% if user.is_authenticated %}
+            {% if movie in user.movies.all %}
+            <a class="btn btn-lg btn-outline-primary" href="{% url 'alert:add-movie' movie.id %}">
+                Unset Alert <span class="px-2"><i class="bi bi-check-circle-fill"></i></span>
+            </a>
+            {% else %}
+            <a class="btn btn-lg btn-outline-primary" href="{% url 'alert:add-movie' movie.id %}">
+                Set Alert <span><i class="bi bi-check-circle"></i></span>
+            </a>
+            {% endif %}
+        {% else %}
+        <button class="btn btn-lg btn-outline-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+            Set Alert <span><i class="bi bi-check-circle"></i></span>
+        </button>
+        {% endif %}
+        {% endif %}
+    </div>
+    
+</div>

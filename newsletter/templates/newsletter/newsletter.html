@@ -1,0 +1,19 @@
+{% extends "newsletter/base.html" %}
+{% load static %} 
+{% load widget_tweaks %} 
+
+{% block content %}
+    <h3>Subscribe to Newsletter</h3>
+    <form hx-post="{% url "newsletter:subscribe" %}" hx-trigger="click" hx-target="#newsletter_temp" hx-swap="innerHTML" >
+      {% csrf_token %}
+      <div class="form-group">
+        {% render_field newsletter_form.email placeholder="Enter your email address" %} 
+      </div>
+      <div class="form-group mt-2">
+        <input 
+          type="submit" 
+          class="btn btn-primary"
+          value="Subscribe"/>
+      </div>
+    </form>
+{% endblock %}

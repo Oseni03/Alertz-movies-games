@@ -1,0 +1,11 @@
+{% extends "newsletter/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="success-message">
+  <h2>Thank you for subscribing to our newsletter!</h2>
+  <p>You will receive updates and special offers from us in your inbox. If you have any questions or need to update your subscription preferences, please
+  </p>
+  <div><a class="btn btn-outline-primary" href="{% url "alert:contact" %}">contact us</a></div>
+</div>
+{% endblock %}

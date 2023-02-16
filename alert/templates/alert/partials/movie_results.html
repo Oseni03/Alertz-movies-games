@@ -1,0 +1,17 @@
+{% load static %}
+
+{% for date in dates %}
+<div class="my-5">
+    <h2 class="ms-5 mb-4">{{ date.date }}</h2>
+    {% for movie in date.movies.all %}
+        {% include "alert/partials/movie_obj.html" %}
+    {% if not forloop.last %}
+        <div class="mb-4">
+            <hr>
+        </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+
+{% include "alert/partials/pagination.html" %}

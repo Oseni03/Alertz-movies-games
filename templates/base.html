@@ -1,0 +1,50 @@
+<!doctype html>
+{% load static %}
+{% load django_htmx %}
+{% load widget_tweaks %} 
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" >
+    
+    <title>{% block title %}{% endblock %} - Alertz</title>
+  </head>
+  <body>
+    
+    {% include "partials/nav.html" %}
+    
+    <div class="container my-2">
+      {% include "partials/messages.html" %}
+    </div>
+    {% block content %}
+    {% endblock %}
+    
+    <div id="newsletter_temp">
+        {% include "newsletter/newsletter.html" %}
+    </div>
+    
+    <!-- Registration Modal Pop-up -->
+    {% include "partials/registration_modal.html" %}
+    
+    <!-- User update Modal Pop-up -->
+    {% include "partials/profile_update_modal.html" %}
+
+    {% include "partials/footer.html" %}
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/htmx.min.js' %}" type="text/javascript" defer></script>
+    <script>
+      const tooltips = document.querySelectorAll(".tt")
+      tooltips.forEach(t => {
+        new bootstrap.Tooltip(t)
+      })
+    </script>
+  </body>
+</html>

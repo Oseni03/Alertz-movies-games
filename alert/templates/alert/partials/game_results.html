@@ -1,0 +1,18 @@
+{% load static %}
+{% load django_htmx %}
+
+{% for date in dates %}
+<div class="my-5">
+    <h2 class="ms-5 mb-4">{{ date.date }}</h2>
+    {% for game in date.games.all %}
+        {% include "alert/partials/game_obj.html" %}
+    {% if not forloop.last %}
+        <div class="mb-4">
+            <hr>
+        </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+
+{% include "alert/partials/pagination.html" %}

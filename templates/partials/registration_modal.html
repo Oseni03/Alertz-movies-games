@@ -1,0 +1,81 @@
+{% load static %}
+{% load widget_tweaks %} 
+
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <div class="text-center">
+                        <h4 class="modal-title" id="modal-title"><span class="text-primary">Sign Up</span> to set an Alert</h4>
+                    </div>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="true">Sign Up</button>
+                      </li>
+                      
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="false">Sign In</button>
+                      </li>
+                      
+                    </ul>
+                    
+                    <div class="tab-content" id="pills-tabContent">
+                        
+                      <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                          <form action="{% url "account:register" %}">
+                            {% csrf_token %}
+                            <div
+                              class="container-fluid d-flex justify-content-center align-items-center h-100"
+                            >
+                              <div class="p-3 text-center">
+                        
+                                <div class="mt-3 px-3">{% render_field reg_form.username %}</div>
+                        
+                                <div class="input-group px-3 mt-3">
+                                  {% render_field reg_form.first_name %}
+                                  <span></span>
+                                  {% render_field reg_form.last_name %}
+                                </div>
+                        
+                                <div class="mt-3 px-3">{% render_field reg_form.email %}</div>
+                        
+                                <div class="mt-3 px-3">{% render_field reg_form.password %}</div>
+                        
+                                <div class="mt-3 px-3">{% render_field reg_form.password2 %}</div>
+                        
+                              </div>
+                            </div>
+                            <div class="container d-flex justify-content-end px-3">
+                              <input type="submit" class="btn btn-primary btn-block btn-signup text-uppercase" value="Sign Up">
+                            </div>
+                        </form>
+                      </div>
+                      
+                      <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                        <form action="{% url "account:login" %}" method="POST">
+                            {% csrf_token %}
+                            <div
+                              class="container-fluid py-3 text-center"
+                            >
+                        
+                                <div class="mt-3 px-3">{% render_field login_form.username class="form-control" placeholder="Username" %}</div>
+                        
+                                <div class="mt-3 px-3">{% render_field login_form.password class="form-control" placeholder="Password" %}</div>
+                        
+                            </div>                             
+                            <div class="container d-flex justify-content-end px-3">
+                              <input type="submit" class="btn btn-primary btn-block btn-signin text-uppercase" value="Sign In">
+                            </div>
+                          </div>
+                        </form>
+                          
+                    </div>          
+                    
+                </div>
+            </div>
+        </div>
+    </div>
